@@ -4,7 +4,7 @@ Fillit is designed to process specifically formatted input file that
 includes a list of 1 to 26 tetriminos.  
 It then rearranges them into the smallest possible square.
 
-As an example, the included example.fillit results in following output:  
+As an example, running `./fillit example.fillit` results in following output:  
 `AABCDDDDEF.`  
 `AABCGGH.EFF`  
 `.BBC.GH.EEF`  
