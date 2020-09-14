@@ -13,7 +13,7 @@
 /*
 **	Fillit is designed to process specifically formatted input file that
 **	includes a list of 1 to 26 tetriminos. It then rearranges them into the
-**	smallest possible square. 
+**	smallest possible square.
 **	If the program encounters any faults in the given argument or fails during
 **	any operation, it quits and prints out a generic error message. Otherwise
 **	The solution is written to the standard output.
@@ -22,7 +22,7 @@
 #include "fillit.h"
 
 /*
-**	Final stage of the program, draws the created solution 
+**	Final stage of the program, draws the created solution
 **	and frees the charray from heap memory.
 */
 
