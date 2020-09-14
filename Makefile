@@ -18,19 +18,20 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIBFT = -L libft/ -lft
 
-SRC = main.c struct_manip.c get_input.c get_tetrimino.c solve_fillit.c
+SRCS = main.c struct_manip.c get_input.c get_tetrimino.c solve_fillit.c
 
-OBJS = $(SRC:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
-.PHONY : library all clean fclean re
-
-library:
-	cd libft && make
+.PHONY : all clean fclean re
 
 all : $(NAME)
 
-$(NAME) : library
-	$(CC) $(CFLAGS) -o $(NAME) $(SRC) $(LIBFT)
+$(NAME) : $(OBJS)
+	cd libft && make
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+$(OBJS) :
+	 $(CC) $(CFLAGS) -c $(SRCS)
 
 clean : 
 	rm -f $(OBJS)
@@ -41,4 +42,3 @@ fclean : clean
 	cd libft && make fclean
 
 re : fclean all
-
