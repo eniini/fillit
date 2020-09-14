@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 21:24:47 by eniini            #+#    #+#             */
-/*   Updated: 2020/09/14 14:17:14 by eniini           ###   ########.fr       */
+/*   Updated: 2020/09/14 19:26:59 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ static char		**create_board(int boardsize)
 
 static int		checker(char **board, t_tetri *head, t_cursor *cursor)
 {
-	int i;
-	int	boardsize;
+	int 	i;
+	size_t	boardsize;
 
 	i = 0;
 	boardsize = ft_get2dsize(board);
