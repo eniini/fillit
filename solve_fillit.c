@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 21:24:47 by eniini            #+#    #+#             */
-/*   Updated: 2020/09/13 22:29:43 by eniini           ###   ########.fr       */
+/*   Updated: 2020/09/14 14:17:14 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,10 +127,6 @@ static int		solver(char **b, t_tetri *head, int c)
 		{
 			if (placer(b, head, new_cursor(y, x), c))
 			{
-				int i = 0;
-				while (b[i] != NULL)
-					ft_putendl(b[i++]);
-				system("clear");
 				if (solver(b, head->next, c + 1))
 					return (1);
 				else
