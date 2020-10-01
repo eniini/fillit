@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 11:22:18 by eniini            #+#    #+#             */
-/*   Updated: 2020/09/13 22:18:50 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/01 16:37:22 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static int	bufferintocharray(char *buffer, char **line)
 		{
 			if (!(*line = ft_strsub(buffer, start, 4)))
 			{
-				ft_free2d(line);
+				ft_free_arr(line);
 				return (0);
 			}
 			start = i + 2;
@@ -131,7 +131,7 @@ char		**get_input(int fd)
 		{
 			if (counter[1]++ > 103)
 			{
-				ft_free2d(charray);
+				ft_free_arr(charray);
 				return (NULL);
 			}
 		}

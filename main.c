@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/17 09:56:44 by eniini            #+#    #+#             */
-/*   Updated: 2020/09/13 22:15:17 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/01 16:38:04 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	printbrd(char **board)
 			ft_putendl(board[i]);
 			i++;
 		}
-		ft_free2d(board);
+		ft_free_arr(board);
 		return (1);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 21:24:47 by eniini            #+#    #+#             */
-/*   Updated: 2020/09/14 19:26:59 by eniini           ###   ########.fr       */
+/*   Updated: 2020/10/01 16:48:16 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static char		**create_board(int boardsize)
 	{
 		if (!(board[i] = ft_strnew(side)))
 		{
-			ft_free2d(board);
+			ft_free_arr(board);
 			return (NULL);
 		}
 		ft_memset(board[i], '.', side);
@@ -55,14 +55,14 @@ static char		**create_board(int boardsize)
 
 static int		checker(char **board, t_tetri *head, t_cursor *cursor)
 {
-	int 	i;
-	size_t	boardsize;
+	int		i;
+	int		boardsize;
 
 	i = 0;
-	boardsize = ft_get2dsize(board);
+	boardsize = ft_get_arr_size(board);
 	while (i < 4)
 	{
-		if ((cursor->y + head->coordinates[i][0]) >= boardsize)
+		if ((cursor->y + head->coordinates[i][0]) >= (int)boardsize)
 			return (0);
 		if (board[(cursor->y + head->coordinates[i][0])]
 		[(cursor->x + head->coordinates[i][1])] != '.')
@@ -154,7 +154,7 @@ char			**solve_fillit(t_tetri *head, int tetricount)
 	while (!(solver(board, head, 'A')))
 	{
 		if (board)
-			ft_free2d(board);
+			ft_free_arr(board);
 		if (!(board = create_board(tetricount * 4)))
 			return (NULL);
 	}

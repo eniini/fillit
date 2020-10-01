@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_tetrimino.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jholopai <jholopai@hive.fi>                +#+  +:+       +#+        */
+/*   By: eniini <eniini@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/26 13:41:12 by jholopai          #+#    #+#             */
-/*   Updated: 2020/09/13 20:55:53 by jholopai         ###   ########.fr       */
+/*   Updated: 2020/10/01 16:37:45 by eniini           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,7 @@ t_tetri		*get_tetrimino(char **array)
 		if (!(check_tetrimino(&array[i], 0, 0)) || !(temp = tetrilist_new()))
 		{
 			tetrilist_delete(&head);
-			ft_free2d(array);
+			ft_free_arr(array);
 			return (NULL);
 		}
 		gather_tetrimino(&array[i], temp);
@@ -158,6 +158,6 @@ t_tetri		*get_tetrimino(char **array)
 		temp = temp->next;
 		i += 4;
 	}
-	ft_free2d(array);
+	ft_free_arr(array);
 	return (head);
 }
